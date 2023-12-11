@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Apollo Hospitals - Contact Us</title>
+   <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input, textarea {
+  margin-bottom: 15px;
+  padding: 8px;
+  width: 100%;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+#response {
+  margin-top: 20px;
+  text-align: center;
+  color: #2ecc71;
+}
+
+   </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Apollo Hospitals</h1>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" onclick="submitForm()">Submit</button>
+    </form>
+    <div id="response"></div>
+  </div>
+
+  <script >
+    function submitForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+
+  // Perform any additional validation here
+
+  // Display a simple response
+  var responseContainer = document.getElementById("response");
+  responseContainer.innerHTML = `Thank you, ${name}! Your message has been received.`;
+  clearForm();
+}
+
+function clearForm() {
+  document.getElementById("contactForm").reset();
+}
+
+  </script>
+</body>
+</html>
